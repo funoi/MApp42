@@ -17,9 +17,9 @@ public class Pull {
         List<Student> students = null;
         Student student = null;
         List<String> hobby = null;
-        XmlPullParser parser = Xml.newPullParser();
 
         // 创建 pull 方式的解析器
+        XmlPullParser parser = Xml.newPullParser();
         parser.setInput(is, "utf-8");
 
         // 获取标签类型
@@ -35,7 +35,7 @@ public class Pull {
 
                     if ("student".equals(name)) {
                         student = new Student();
-                        if (parser.getAttributeCount() != 0)
+                        if (parser.getAttributeCount() != 0)  // 检查是否有属性
                             student.setId(Integer.valueOf(parser.getAttributeValue(0)));
                         break;
                     }
