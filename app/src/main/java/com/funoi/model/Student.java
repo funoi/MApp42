@@ -1,5 +1,7 @@
 package com.funoi.model;
 
+import androidx.annotation.NonNull;
+
 import java.util.List;
 
 public class Student {
@@ -17,6 +19,7 @@ public class Student {
         this.hobby = hobby;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "Student{" +
