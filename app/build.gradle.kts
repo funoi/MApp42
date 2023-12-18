@@ -35,6 +35,8 @@ dependencies {
     implementation(libs.recyclerview)
     implementation(libs.recyclerview.selection)
     implementation(libs.gridlayout)
+    implementation(libs.viewpager2)
+
 
     /* -------studio 自动生成的依赖--------*/
     implementation(libs.appcompat)

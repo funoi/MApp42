@@ -4,22 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:visibility="visible"
     tools:context=".AddStuFragment">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.gridlayout.widget.GridLayout
             android:id="@+id/add_stu_table"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
             app:columnCount="2"
             app:rowCount="5">
 
@@ -27,137 +28,185 @@
                 android:id="@+id/out_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/id" />
+                android:padding="10dp"
+                android:text="@string/id"
+                android:textSize="@dimen/normalSize"
+                android:visibility="visible" />
 
             <EditText
                 android:id="@+id/input_user_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="8"
+                android:importantForAutofill="no"
                 android:inputType="number"
+                android:minHeight="48dp"
+                android:padding="10dp"
                 android:text="@string/_12"
-                android:autofillHints=""
+                android:textSize="@dimen/normalSize"
+                android:visibility="visible"
                 tools:ignore="LabelFor" />
 
             <TextView
                 android:id="@+id/out_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/name" />
+                android:padding="10dp"
+                android:text="@string/name"
+                android:textSize="@dimen/normalSize"
+                android:visibility="visible" />
 
             <EditText
                 android:id="@+id/input_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="8"
+                android:importantForAutofill="no"
                 android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:padding="10dp"
                 android:text="@string/furina"
-                android:autofillHints=""
+                android:textSize="@dimen/normalSize"
+                android:visibility="visible"
                 tools:ignore="LabelFor" />
 
             <TextView
                 android:id="@+id/out_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/age" />
+                android:padding="10dp"
+                android:text="@string/age"
+                android:textSize="@dimen/normalSize"
+                android:visibility="visible" />
 
             <EditText
                 android:id="@+id/input_user_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="5"
+                android:importantForAutofill="no"
                 android:inputType="number"
+                android:minHeight="48dp"
+                android:padding="10dp"
                 android:text="@string/_18"
-                android:autofillHints=""
+                android:textSize="@dimen/normalSize"
+                android:visibility="visible"
                 tools:ignore="LabelFor" />
 
             <TextView
                 android:id="@+id/out_sex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sex" />
+                android:padding="10dp"
+                android:text="@string/sex"
+                android:textSize="@dimen/normalSize"
+                android:visibility="visible" />
 
             <RadioGroup
                 android:id="@+id/input_user_sex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="visible">
 
                 <RadioButton
                     android:id="@+id/out_sex_man"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="@string/man" />
+                    android:text="@string/man"
+                    android:textSize="@dimen/normalSize"
+                    android:visibility="visible" />
 
                 <RadioButton
                     android:id="@+id/out_sex_women"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/women" />
+                    android:checked="true"
+                    android:text="@string/women"
+                    android:textSize="@dimen/normalSize"
+                    android:visibility="visible" />
 
                 <RadioButton
                     android:id="@+id/out_sex_secret"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/secret" />
+                    android:text="@string/secret"
+                    android:textSize="@dimen/normalSize"
+                    android:visibility="visible" />
             </RadioGroup>
 
             <TextView
                 android:id="@+id/out_hobby"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hobby" />
+                android:padding="10dp"
+                android:text="@string/hobby"
+                android:textSize="@dimen/normalSize"
+                android:visibility="visible" />
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
 
                 <CheckBox
                     android:id="@+id/input_user_hobby_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/eat" />
+                    android:text="@string/eat"
+                    android:textSize="@dimen/normalSize"
+                    android:visibility="visible" />
 
                 <CheckBox
                     android:id="@+id/input_user_hobby_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/sleep" />
+                    android:text="@string/sleep"
+                    android:textSize="@dimen/normalSize"
+                    android:visibility="visible" />
 
                 <CheckBox
                     android:id="@+id/input_user_hobby_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/playgame" />
+                    android:text="@string/playgame"
+                    android:textSize="@dimen/normalSize"
+                    android:visibility="visible" />
 
                 <CheckBox
                     android:id="@+id/input_user_hobby_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/study" />
+                    android:text="@string/study"
+                    android:textSize="@dimen/normalSize"
+                    android:visibility="visible" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:minHeight="48dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
 
                     <CheckBox
                         android:id="@+id/input_user_hobby_5"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/other" />
+                        android:text="@string/other"
+                        android:textSize="@dimen/normalSize"
+                        android:visibility="visible" />
 
                     <EditText
                         android:id="@+id/input_user_hobby_5_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="8"
+                        android:importantForAutofill="no"
                         android:inputType="text"
-                        android:text=""
-                        android:autofillHints=""
+                        android:textSize="@dimen/normalSize"
+                        android:visibility="visible"
                         tools:ignore="LabelFor" />
                 </LinearLayout>
 
@@ -169,30 +218,37 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="visible">
 
             <Button
                 android:id="@+id/save_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn_select"
-                android:textColor="@color/black"
-                android:text="@string/determine"
-                style="?android:attr/buttonBarButtonStyle" />
-
-            <Button
-                android:id="@+id/read_button"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
-                android:background="@drawable/btn_select"
-                android:textColor="@color/black"
+                android:background="@drawable/btn_custom"
+                android:padding="1dp"
+                android:text="@string/determine"
+                android:textSize="@dimen/normalSize"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/read_button"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_custom"
+                android:padding="1dp"
                 android:text="@string/read"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textSize="@dimen/normalSize"
+                android:visibility="visible" />
         </LinearLayout>
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

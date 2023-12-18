@@ -6,8 +6,8 @@
    See https://developer.android.com/about/versions/12/backup-restore
 -->
 <full-backup-content>
-    <!--
+    <!-- 备份设置，安卓11-使用
    <include domain="sharedpref" path="."/>
    <exclude domain="sharedpref" path="device.xml"/>
--->
+    -->
 </full-backup-content>

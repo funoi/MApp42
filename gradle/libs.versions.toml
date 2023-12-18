@@ -1,5 +1,5 @@
 [versions]
-agp = "8.3.0-alpha16"
+agp = "8.3.0-alpha18"
 gridlayout = "1.0.0"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -11,6 +11,7 @@ constraintlayout = "2.1.4"
 recyclerview = "1.3.2"
 recyclerviewSelectionVersion = "1.1.0"
 legacySupportV4 = "1.0.0"
+viewpager2 = "1.0.0"
 
 [libraries]
 gridlayout = { module = "androidx.gridlayout:gridlayout", version.ref = "gridlayout" }
@@ -24,6 +25,7 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 recyclerview-selection = { module = "androidx.recyclerview:recyclerview-selection", version.ref = "recyclerviewSelectionVersion" }
 legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
+viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

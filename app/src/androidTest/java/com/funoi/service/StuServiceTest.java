@@ -1,9 +1,12 @@
 package com.funoi.service;
 
 import android.content.Context;
+
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
+
 import com.funoi.model.Student;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -12,25 +15,10 @@ import java.util.List;
 
 @RunWith(AndroidJUnit4.class)
 public class StuServiceTest {
-    Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
+
+    Context context = InstrumentationRegistry.getInstrumentation()
+            .getTargetContext();
     StuService service = new StuService(context);
-
-    @Test
-    public void addStu() {
-        List<String> hobby = new ArrayList<>();
-        hobby.add("c++");
-        hobby.add("python");
-        hobby.add("java");
-        hobby.add("rust");
-        hobby.add("mysql");
-
-        Student s = new Student(1, "fu", null, "女", hobby);
-        Student s1 = new Student(2, "fu", 18, "女", hobby);
-        Student s2 = new Student(4, "fu", 17, null, hobby);
-        service.addStu(s);
-        service.addStu(s1);
-        service.addStu(s2);
-    }
 
     @Test
     public void delStu() {
@@ -62,6 +50,23 @@ public class StuServiceTest {
     }
 
     @Test
+    public void addStu() {
+        List<String> hobby = new ArrayList<>();
+        hobby.add("c++");
+        hobby.add("python");
+        hobby.add("java");
+        hobby.add("rust");
+        hobby.add("mysql");
+
+        Student s = new Student(1, "fu", null, "女", hobby);
+        Student s1 = new Student(2, "fu", 18, "女", hobby);
+        Student s2 = new Student(4, "fu", 17, null, hobby);
+        service.addStu(s);
+        service.addStu(s1);
+        service.addStu(s2);
+    }
+
+    @Test
     public void findStu() {
         addStu();
         Student s = service.findStu(1);
@@ -76,9 +81,11 @@ public class StuServiceTest {
         System.out.println("s: " + s);
         System.out.println("getCount: " + service.getCount());
         List<Student> students = service.findAll(0, service.getCount());
-        if (students != null)
-            for (Student student : students)
+        if (students != null) {
+            for (Student student : students) {
                 System.out.println("ss: " + student);
+            }
+        }
         System.out.println("list: " + students);
 
     }

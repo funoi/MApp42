@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import java.util.List;
 
 public class Student {
+
     private Integer id;
     private String name;
     private Integer age;
@@ -19,16 +20,14 @@ public class Student {
         this.hobby = hobby;
     }
 
+    public Student() {
+    }
+
     @NonNull
     @Override
     public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", sex='" + sex + '\'' +
-                ", hobby=" + hobby +
-                '}';
+        return "Student{" + "id=" + id + ", name='" + name + '\'' + ", age=" + age + ", sex='" + sex
+                + '\'' + ", hobby=" + hobby + '}';
     }
 
     public Integer getId() {
@@ -69,8 +68,5 @@ public class Student {
 
     public void setHobby(List<String> hobby) {
         this.hobby = hobby;
-    }
-
-    public Student() {
     }
 }

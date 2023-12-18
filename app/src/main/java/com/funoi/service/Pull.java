@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pull {
+
     public static List<Student> getStu(InputStream is) throws Exception {
         List<Student> students = null;
         Student student = null;
@@ -31,12 +32,14 @@ public class Pull {
                     break;
 
                 case XmlPullParser.START_TAG:
-                    String name = parser.getName();  // 获取标签的名称
+                    String name = parser.getName(); // 获取标签的名称
 
                     if ("student".equals(name)) {
                         student = new Student();
-                        if (parser.getAttributeCount() != 0)  // 检查是否有属性
+                        if (parser.getAttributeCount() != 0) // 检查是否有属性
+                        {
                             student.setId(Integer.valueOf(parser.getAttributeValue(0)));
+                        }
                         break;
                     }
 
@@ -51,12 +54,10 @@ public class Pull {
                             break;
                         }
 
-
                         if ("sex".equals(name)) {
                             student.setSex(parser.nextText());
                             break;
                         }
-
 
                         if ("hobbyArr".equals(name)) {
                             hobby = new ArrayList<>();
@@ -91,7 +92,7 @@ public class Pull {
 
                     break;
             }
-            eventType = parser.next();  // 读取下一行
+            eventType = parser.next(); // 读取下一行
         }
 
         return students;
@@ -99,44 +100,41 @@ public class Pull {
 
     public static void saveStu(List<Student> students, Writer writer) throws Exception {
         // 创建xml的生成器
-        XmlSerializer serializer = Xml.newSerializer();  // pull 方式的 xml 序列话对象
-        serializer.setOutput(writer);  // 设置输出流,字符方式
+        XmlSerializer serializer = Xml.newSerializer(); // pull 方式的 xml 序列话对象
+        serializer.setOutput(writer); // 设置输出流,字符方式
         serializer.startDocument("utf-8", true);
 
         serializer.startTag(null, "students");
         // 遍历链表
         for (Student student : students) {
             serializer.startTag(null, "student");
-            if (student.getId() != null)
+            if (student.getId() != null) {
                 serializer.attribute(null, "id", String.valueOf(student.getId()));
-
+            }
             if (student.getName() != null) {
                 serializer.startTag(null, "name");
                 serializer.text(student.getName());
                 serializer.endTag(null, "name");
             }
-
             if (student.getAge() != null) {
                 serializer.startTag(null, "age");
                 serializer.text(String.valueOf(student.getAge()));
                 serializer.endTag(null, "age");
             }
-
             if (student.getSex() != null) {
                 serializer.startTag(null, "sex");
                 serializer.text(student.getSex());
                 serializer.endTag(null, "sex");
             }
-
             if (student.getHobby() != null) {
-                serializer.startTag(null, "hobbies");
+                serializer.startTag(null, "hobbyArr");
 
                 for (String hobby : student.getHobby()) {
                     serializer.startTag(null, "hobby");
                     serializer.text(hobby);
                     serializer.endTag(null, "hobby");
                 }
-                serializer.endTag(null, "hobbies");
+                serializer.endTag(null, "hobbyArr");
             }
 
             serializer.endTag(null, "student");
